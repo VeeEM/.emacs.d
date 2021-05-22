@@ -66,6 +66,9 @@
 
 (setq js-indent-level 2)
 
+; Don't re-indent on newline
+(setq electric-indent-mode nil)
+
 ; Set default fonts
 (when (member "DejaVu Sans Mono" (font-family-list))
   (set-face-attribute 'default
