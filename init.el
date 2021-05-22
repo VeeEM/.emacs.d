@@ -69,6 +69,8 @@
 ; Don't re-indent on newline
 (setq electric-indent-mode nil)
 
+(custom-set-variables '(evil-shift-width 2))
+
 ; Set default fonts
 (when (member "DejaVu Sans Mono" (font-family-list))
   (set-face-attribute 'default
