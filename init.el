@@ -73,6 +73,9 @@
 ; Shift by 2 spaces with < and > in evil
 (custom-set-variables '(evil-shift-width 2))
 
+; Scroll at constant speed using the scroll wheel
+(setq mouse-wheel-progressive-speed nil)
+
 ; Set default fonts
 (when (member "DejaVu Sans Mono" (font-family-list))
   (set-face-attribute 'default
