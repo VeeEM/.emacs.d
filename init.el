@@ -59,16 +59,18 @@
 
 (setq create-lockfiles nil) ; disable lockfiles to not confuse nodejs
 
+; Enable ido for interactive buffer and file navigation
 (setq ido-everywhere t)
 (setq ido-enable-flex-matching t)
-
 (ido-mode t)
 
+; 2 space indentation for Javascript
 (setq js-indent-level 2)
 
 ; Don't re-indent on newline
 (setq electric-indent-mode nil)
 
+; Shift by 2 spaces with < and > in evil
 (custom-set-variables '(evil-shift-width 2))
 
 ; Set default fonts
