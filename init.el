@@ -63,6 +63,8 @@
 ; Enable ido for interactive buffer and file navigation
 (setq ido-everywhere t)
 (setq ido-enable-flex-matching t)
+; Prevent ido from suggesting files from outside current working directory
+(setq ido-auto-merge-work-directories-length -1)
 (ido-mode t)
 
 ; 2 space indentation for Javascript
