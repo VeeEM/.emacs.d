@@ -6,6 +6,10 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package ace-window
+  :ensure t
+  :config (global-set-key (kbd "M-o") 'ace-window))
+
 (use-package company
   :ensure t
   :config (company-mode))
