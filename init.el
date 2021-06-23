@@ -13,8 +13,9 @@
 (use-package evil
   :ensure t
   :init (setq evil-want-C-u-scroll t)
-  :config (evil-mode))
-
+  :config (evil-mode)
+  :custom
+  (evil-shift-width 2 "Shift by 2 spaces with < and > in evil"))
 
 (use-package paredit
   :ensure t
@@ -76,9 +77,6 @@
 ; Don't re-indent on newline
 (setq electric-indent-mode nil)
 
-; Shift by 2 spaces with < and > in evil
-(custom-set-variables '(evil-shift-width 2))
-
 ; Scroll at constant speed using the scroll wheel
 (setq mouse-wheel-progressive-speed nil)
 
@@ -101,3 +99,8 @@
 
 ; Show column numbers
 (column-number-mode)
+
+(setq custom-file "~/.emacs.d/custom.el")
+(unless (file-exists-p custom-file)
+  (write-region "" nil custom-file))
+(load custom-file)
