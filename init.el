@@ -68,6 +68,11 @@
 (setq auto-save-default nil)
 (setq create-lockfiles nil) ; disable lockfiles to not confuse nodejs
 
+;; Performance settings for lsp-mode
+(setq gc-cons-threshold 100000000) ; Allow more garbage before collecting
+(setq read-process-output-max (* 1024 1024)) ; Read bigger chunks from subprocess
+(setq lsp-log-io nil) ; Disable logging
+
 ; Enable ido for interactive buffer and file navigation
 (setq ido-everywhere t)
 (setq ido-enable-flex-matching t)
@@ -77,6 +82,19 @@
 
 ; 2 space indentation for Javascript
 (setq js-indent-level 2)
+
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(use-package web-mode
+  :ensure t
+  :mode (("\\.js\\'" . web-mode)
+	 ("\\.jsx\\'" . web-mode)
+	 ("\\.ts\\'" . web-mode)
+	 ("\\.tsx\\'" . web-mode)
+	 ("\\.html\\'" . web-mode)
+	 ("\\.htm\\'" . web-mode))
+  :commands web-mode)
 
 ; Don't re-indent on newline
 (setq electric-indent-mode nil)
