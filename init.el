@@ -65,7 +65,7 @@
    kept-new-versions 6
    kept-old-versions 2
    version-control t)       ; use versioned backups
-
+(setq auto-save-default nil)
 (setq create-lockfiles nil) ; disable lockfiles to not confuse nodejs
 
 ; Enable ido for interactive buffer and file navigation
