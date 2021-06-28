@@ -12,7 +12,10 @@
 
 (use-package company
   :ensure t
-  :config (company-mode))
+  :init
+  (setq company-minimum-prefix-length 1)
+  (setq company-idle-delay 0.0)
+  :config (global-company-mode t))
 
 (use-package evil
   :ensure t
