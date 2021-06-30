@@ -24,6 +24,9 @@
   :custom
   (evil-shift-width 2 "Shift by 2 spaces with < and > in evil"))
 
+(use-package magit
+  :ensure t)
+
 (use-package paredit
   :ensure t
   :hook ((lisp-mode emacs-lisp-mode) . paredit-mode))
