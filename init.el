@@ -128,6 +128,9 @@
 ; Show column numbers
 (column-number-mode)
 
+;; Show occurance count when searching
+(custom-set-variables '(isearch-lazy-count t))
+
 (setq custom-file "~/.emacs.d/custom.el")
 (unless (file-exists-p custom-file)
   (write-region "" nil custom-file))
