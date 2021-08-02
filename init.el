@@ -19,10 +19,16 @@
 
 (use-package evil
   :ensure t
-  :init (setq evil-want-C-u-scroll t)
+  :init
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-keybinding nil) ; should be nil when using evil-collection
   :config (evil-mode)
   :custom
   (evil-shift-width 2 "Shift by 2 spaces with < and > in evil"))
+
+(use-package evil-collection
+  :ensure t
+  :config (evil-collection-init))
 
 (use-package magit
   :ensure t)
