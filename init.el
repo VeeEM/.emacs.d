@@ -40,6 +40,9 @@
 (use-package projectile
   :ensure t
   :config
+  ;; Makes projectile obey .gitignore
+  ;; Depends on some Unix utilities like tr to work.
+  (setq projectile-indexing-method 'alien)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
 
