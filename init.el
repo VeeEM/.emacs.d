@@ -144,3 +144,5 @@
 (unless (file-exists-p custom-file)
   (write-region "" nil custom-file))
 (load custom-file)
+
+(setq-default buffer-file-coding-system 'utf-8-unix)
