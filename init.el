@@ -122,7 +122,7 @@
   (set-face-attribute 'default
                       nil
                       :font "DejaVu Sans Mono"
-                      :height 140
+                      :height 120
 		      :weight 'normal))
 
 (set-fontset-font t 'symbol "Noto Color Emoji")
