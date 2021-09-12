@@ -30,6 +30,16 @@
   :ensure t
   :config (evil-collection-init))
 
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+(use-package gnus
+  :ensure t
+  :custom
+  (gnus-select-method '(nntp "news.gwene.org"))
+  (gnus-fetch-old-headers 'some))
+
 (use-package magit
   :ensure t)
 
