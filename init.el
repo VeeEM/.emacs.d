@@ -150,6 +150,10 @@
 ;; Show occurance count when searching
 (custom-set-variables '(isearch-lazy-count t))
 
+;; Enable fill-column-indicator-mode upon entering text and prog mode
+(add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+
 (setq custom-file "~/.emacs.d/custom.el")
 (unless (file-exists-p custom-file)
   (write-region "" nil custom-file))
