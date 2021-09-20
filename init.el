@@ -71,6 +71,11 @@
     '(rainbow-delimiters-depth-9-face ((t (:foreground "saddle brown")))))
   :hook ((lisp-mode emacs-lisp-mode) . rainbow-delimiters-mode))
 
+(use-package slime
+  :ensure t
+  :custom
+  (inferior-lisp-program "sbcl"))
+
 (use-package sr-speedbar
   :ensure t)
 
