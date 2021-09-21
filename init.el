@@ -141,6 +141,11 @@
   "Try to move forward one character using evil-forward-char."
   (evil-forward-char 1 nil t))
 
+(defun veeem-pwd-to-load-path ()
+  "Add current working directory to load-path."
+  (interactive)
+  (add-to-list 'load-path (expand-file-name ".")))
+
 ; Exit insert-state after cursor, instead of before cursor
 (add-hook 'evil-insert-state-exit-hook 'veeem-forward-unless-eol)
 
