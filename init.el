@@ -50,6 +50,14 @@
   :ensure t
   :hook ((lisp-mode emacs-lisp-mode) . paredit-mode))
 
+(use-package pipenv
+  :ensure t
+  :hook (python-mode . pipenv-mode)
+  :init
+  (setq
+   pipenv-projectile-after-switch-function
+   #'pipenv-projectile-after-switch-extended))
+
 (use-package projectile
   :ensure t
   :config
@@ -188,3 +196,5 @@
 
 (setq-default buffer-file-coding-system 'utf-8-unix)
 (put 'upcase-region 'disabled nil)
+
+(add-to-list 'display-buffer-alist '("*Help*" display-buffer-reuse-window))
