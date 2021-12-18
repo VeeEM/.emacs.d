@@ -17,6 +17,9 @@
   (setq company-idle-delay 0.0)
   :config (global-company-mode t))
 
+(use-package cuda-mode
+  :ensure t)
+
 (use-package evil
   :ensure t
   :init
@@ -77,6 +80,20 @@
   (inferior-lisp-program "sbcl"))
 
 (use-package sr-speedbar
+  :ensure t)
+
+(use-package tree-sitter
+  :ensure t
+  :config
+  (global-tree-sitter-mode))
+
+(use-package tree-sitter-langs
+  :ensure t)
+
+(use-package tree-edit
+  :ensure t)
+
+(use-package evil-tree-edit
   :ensure t)
 
 (use-package which-key
@@ -170,3 +187,4 @@
 (load custom-file)
 
 (setq-default buffer-file-coding-system 'utf-8-unix)
+(put 'upcase-region 'disabled nil)
