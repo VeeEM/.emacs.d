@@ -43,6 +43,17 @@
   (gnus-select-method '(nntp "news.gwene.org"))
   (gnus-fetch-old-headers 'some))
 
+(use-package lsp-java
+  :ensure t
+  :after lsp)
+
+(use-package lsp-mode
+  :ensure t
+  :hook ((java-mode) . lsp-deferred))
+
+(use-package lsp-ui
+  :ensure t)
+
 (use-package magit
   :ensure t)
 
@@ -63,7 +74,7 @@
   :config
   ;; Makes projectile obey .gitignore
   ;; Depends on some Unix utilities like tr to work.
-  (setq projectile-indexing-method 'alien)
+  ;; (setq projectile-indexing-method 'alien)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
 
@@ -184,7 +195,8 @@
 
 ;; Show occurance count when searching
 (custom-set-variables '(isearch-lazy-count t)
-		      '(inferior-lisp-program "sbcl"))
+		      '(inferior-lisp-program "sbcl")
+		      '(lsp-java-format-on-type-enabled nil))
 
 ;; Enable fill-column-indicator-mode upon entering text and prog mode
 (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
