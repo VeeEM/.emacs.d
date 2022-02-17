@@ -20,6 +20,9 @@
 (use-package cuda-mode
   :ensure t)
 
+(use-package elisp-refs
+  :ensure t)
+
 (use-package evil
   :ensure t
   :init
