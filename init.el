@@ -190,6 +190,13 @@
   (interactive)
   (add-to-list 'load-path (expand-file-name ".")))
 
+(defun veeem-insert-em-dash ()
+  "Insert an em-dash at point."
+  (interactive)
+  (insert-char ?—))
+
+(global-set-key (kbd "C-c i -") #'veeem-insert-em-dash)
+
 ; Exit insert-state after cursor, instead of before cursor
 (add-hook 'evil-insert-state-exit-hook 'veeem-forward-unless-eol)
 
