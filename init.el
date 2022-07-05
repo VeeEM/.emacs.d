@@ -46,6 +46,9 @@
   (gnus-select-method '(nntp "news.gwene.org"))
   (gnus-fetch-old-headers 'some))
 
+(use-package haskell-mode
+  :ensure t)
+
 (use-package lsp-java
   :ensure t
   :after lsp)
@@ -58,6 +61,9 @@
   :ensure t)
 
 (use-package magit
+  :ensure t)
+
+(use-package org
   :ensure t)
 
 (use-package paredit
@@ -211,6 +217,9 @@
 ;; Enable fill-column-indicator-mode upon entering text and prog mode
 (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+
+;; Enable Ansi Colors in compilation-mode
+(add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (unless (file-exists-p custom-file)
