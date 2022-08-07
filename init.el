@@ -221,6 +221,9 @@
 ;; Enable Ansi Colors in compilation-mode
 (add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
 
+;; Highlight current line in package-list-packages
+(add-hook 'package-menu-mode-hook #'hl-line-mode)
+
 (setq custom-file "~/.emacs.d/custom.el")
 (unless (file-exists-p custom-file)
   (write-region "" nil custom-file))
