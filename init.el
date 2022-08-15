@@ -17,6 +17,11 @@
   (setq company-idle-delay 0.0)
   :config (global-company-mode t))
 
+(use-package csharp-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.cs\\'" . csharp-tree-sitter-mode)))
+
 (use-package cuda-mode
   :ensure t)
 
@@ -55,7 +60,8 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook ((java-mode) . lsp-deferred))
+  :hook ((java-mode . lsp-deferred)
+	 (csharp-mode . lsp-deferred)))
 
 (use-package lsp-ui
   :ensure t)
@@ -118,6 +124,9 @@
 (use-package tree-sitter-langs
   :ensure t)
 
+(use-package tree-sitter-indent
+  :ensure t)
+
 (use-package tree-edit
   :ensure t)
 
@@ -127,6 +136,9 @@
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+
+(use-package yaml-mode
+  :ensure t)
 
 (global-display-line-numbers-mode)
 
