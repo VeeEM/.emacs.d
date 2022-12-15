@@ -70,7 +70,13 @@
   :ensure t)
 
 (use-package org
-  :ensure t)
+  :ensure t
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((C . t)
+     (python . t)
+     (gnuplot .t))))
 
 (use-package paredit
   :ensure t
@@ -135,7 +141,8 @@
 
 (use-package which-key
   :ensure t
-  :config (which-key-mode))
+  :config (which-key-mode)
+  :custom (which-key-idle-secondary-delay 0.1))
 
 (use-package yaml-mode
   :ensure t)
