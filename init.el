@@ -17,11 +17,6 @@
   (setq company-idle-delay 0.0)
   :config (global-company-mode t))
 
-(use-package csharp-mode
-  :ensure t
-  :config
-  (add-to-list 'auto-mode-alist '("\\.cs\\'" . csharp-tree-sitter-mode)))
-
 (use-package cuda-mode
   :ensure t)
 
@@ -52,18 +47,6 @@
   (gnus-fetch-old-headers 'some))
 
 (use-package haskell-mode
-  :ensure t)
-
-(use-package lsp-java
-  :ensure t
-  :after lsp)
-
-(use-package lsp-mode
-  :ensure t
-  :hook ((java-mode . lsp-deferred)
-	 (csharp-mode . lsp-deferred)))
-
-(use-package lsp-ui
   :ensure t)
 
 (use-package magit
@@ -118,26 +101,6 @@
   :ensure t
   :custom
   (sldb-initial-restart-limit 20))
-
-(use-package sr-speedbar
-  :ensure t)
-
-(use-package tree-sitter
-  :ensure t
-  :config
-  (global-tree-sitter-mode))
-
-(use-package tree-sitter-langs
-  :ensure t)
-
-(use-package tree-sitter-indent
-  :ensure t)
-
-(use-package tree-edit
-  :ensure t)
-
-(use-package evil-tree-edit
-  :ensure t)
 
 (use-package which-key
   :ensure t
