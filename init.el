@@ -28,7 +28,8 @@
   :init
   (setq evil-want-C-u-scroll t)
   (setq evil-want-keybinding nil) ; should be nil when using evil-collection
-  :config (evil-mode)
+  :config
+  (evil-mode)
   :custom
   (evil-shift-width 2 "Shift by 2 spaces with < and > in evil"))
 
@@ -194,7 +195,8 @@
 ;; Show occurance count when searching
 (custom-set-variables '(isearch-lazy-count t)
 		      '(inferior-lisp-program "sbcl")
-		      '(lsp-java-format-on-type-enabled nil))
+		      '(lsp-java-format-on-type-enabled nil)
+		      '(flycheck-dafny-executable "dafny"))
 
 ;; Enable fill-column-indicator-mode upon entering text and prog mode
 (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
