@@ -10,12 +10,20 @@
   :ensure t
   :config (global-set-key (kbd "M-o") 'ace-window))
 
+(use-package boogie-friends
+  :ensure t
+  :custom (flycheck-dafny-executable "dafny"))
+
 (use-package company
   :ensure t
   :init
   (setq company-minimum-prefix-length 1)
   (setq company-idle-delay 0.0)
   :config (global-company-mode t))
+
+(use-package company-coq
+  :ensure t
+  :hook coq-mode)
 
 (use-package cuda-mode
   :ensure t)
@@ -39,7 +47,8 @@
 
 (use-package flycheck
   :ensure t
-  :init (global-flycheck-mode))
+  :init (global-flycheck-mode)
+  :custom (flycheck-disabled-checkers (list 'coq)))
 
 (use-package gnus
   :ensure t
@@ -82,6 +91,9 @@
   ;; (setq projectile-indexing-method 'alien)
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
+
+(use-package proof-general
+  :ensure t)
 
 (use-package rainbow-delimiters
   :ensure t
@@ -195,8 +207,7 @@
 ;; Show occurance count when searching
 (custom-set-variables '(isearch-lazy-count t)
 		      '(inferior-lisp-program "sbcl")
-		      '(lsp-java-format-on-type-enabled nil)
-		      '(flycheck-dafny-executable "dafny"))
+		      '(lsp-java-format-on-type-enabled nil))
 
 ;; Enable fill-column-indicator-mode upon entering text and prog mode
 (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
