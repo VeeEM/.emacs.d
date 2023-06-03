@@ -28,6 +28,11 @@
 (use-package cuda-mode
   :ensure t)
 
+(use-package eglot
+  :ensure t
+  :config
+  (define-key eglot-mode-map (kbd "C-c a") 'eglot-code-actions))
+
 (use-package elisp-refs
   :ensure t)
 
