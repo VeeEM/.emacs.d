@@ -218,6 +218,13 @@
 (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 
+(add-hook 'c++-mode-hook
+	  (lambda ()
+	    (flycheck-mode 0)))
+(add-hook 'c-mode-hook
+	  (lambda ()
+	    (flycheck-mode 0)))
+
 ;; Enable Ansi Colors in compilation-mode
 (add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
 
