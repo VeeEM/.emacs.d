@@ -14,6 +14,12 @@
   :ensure t
   :custom (flycheck-dafny-executable "dafny"))
 
+(use-package cc-mode
+  :hook ((c-mode c++-mode) . veeem-disable-flycheck)
+  :config
+  (define-key c-mode-map (kbd "C-c C-c") #'compile)
+  (define-key c++-mode-map (kbd "C-c C-c") #'compile))
+
 (use-package company
   :ensure t
   :init
@@ -201,6 +207,10 @@
   (interactive)
   (insert-char ?—))
 
+(defun veeem-disable-flycheck ()
+  "Disable flycheck-mode."
+  (flycheck-mode 0))
+
 (global-set-key (kbd "C-c i -") #'veeem-insert-em-dash)
 
 ; Exit insert-state after cursor, instead of before cursor
@@ -217,13 +227,6 @@
 ;; Enable fill-column-indicator-mode upon entering text and prog mode
 (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
-
-(add-hook 'c++-mode-hook
-	  (lambda ()
-	    (flycheck-mode 0)))
-(add-hook 'c-mode-hook
-	  (lambda ()
-	    (flycheck-mode 0)))
 
 ;; Enable Ansi Colors in compilation-mode
 (add-hook 'compilation-filter-hook #'ansi-color-compilation-filter)
