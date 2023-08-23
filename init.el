@@ -246,3 +246,42 @@
 (put 'upcase-region 'disabled nil)
 
 (add-to-list 'display-buffer-alist '("*Help*" display-buffer-reuse-window))
+
+(defun veeem-jump-todo (N)
+"Jump to TODO N."
+(interactive "nWhich todo?")
+(save-window-excursion
+  (rgrep (concat "TODO " (number-to-string N) ":") "*" ".")
+(with-current-buffer "*grep*"
+  (message (concat "current mode is " (prin1-to-string major-mode)))
+  (add-hook 'compilation-finish-functions #'veeem-open-first-result nil t))))
+
+(defun veeem-open-first-result (buffer result)
+  "Open the first result in compilation mode."
+  (let ((todo-buffer-position
+	 ;; save-window-excursion does not affect windows that are
+	 ;; opened in a different frame.
+	 (save-window-excursion 
+	   (with-current-buffer buffer
+	     (remove-hook 'compilation-finish-functions #'veeem-open-first-result t)
+	     (compilation-next-error 1)
+	     (compile-goto-error)
+	     ;(next-error)
+	     (cons (current-buffer) (point))))))
+    (switch-to-buffer (car todo-buffer-position))
+    (goto-char (cdr todo-buffer-position))))
+
+(defun veeem-read-todo-nr ()
+  (let*
+      ((current-line (thing-at-point 'line))
+       (todo-nr-string
+	(prog2
+	    (string-match
+	     "TODO \\([[:digit:]]+\\)"
+	     current-line)
+	    (match-string 1 current-line)))
+       (todo-nr (if todo-nr-string
+		    (string-to-number todo-nr-string)
+		  nil)))
+    todo-nr))
+
