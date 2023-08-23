@@ -83,7 +83,8 @@
    'org-babel-load-languages
    '((C . t)
      (python . t)
-     (gnuplot .t))))
+     (gnuplot .t)
+     (shell . t))))
 
 (use-package paredit
   :ensure t
