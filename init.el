@@ -188,12 +188,11 @@
 (setq mouse-wheel-progressive-speed nil)
 
 ; Set default fonts
-(when (member "DejaVu Sans Mono" (font-family-list))
-  (set-face-attribute 'default
-                      nil
-                      :font "DejaVu Sans Mono"
-                      :height 120
-		      :weight 'normal))
+(set-face-attribute 'default
+                    nil
+                    :font "DejaVu Sans Mono"
+                    :height 120
+		    :weight 'normal)
 
 (set-fontset-font t 'symbol "Noto Color Emoji")
 
