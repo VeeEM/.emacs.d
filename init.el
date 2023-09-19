@@ -37,10 +37,15 @@
 (use-package cuda-mode
   :ensure t)
 
+(use-package diff-mode
+  :config
+  (keymap-set diff-mode-map "M-o" nil))
+
 (use-package eglot
   :ensure t
   :config
-  (define-key eglot-mode-map (kbd "C-c a") 'eglot-code-actions))
+  (define-key eglot-mode-map (kbd "C-c a") 'eglot-code-actions)
+  (define-key eglot-mode-map (kbd "C-c f") 'eglot-format))
 
 (use-package elisp-refs
   :ensure t)
