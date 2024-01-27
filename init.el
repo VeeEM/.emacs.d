@@ -89,7 +89,8 @@
    '((C . t)
      (python . t)
      (gnuplot .t)
-     (shell . t))))
+     (shell . t)))
+  (plist-put org-format-latex-options :scale 2.0))
 
 (use-package paredit
   :ensure t
@@ -230,7 +231,8 @@
 ;; Show occurance count when searching
 (custom-set-variables '(isearch-lazy-count t)
 		      '(inferior-lisp-program "sbcl")
-		      '(lsp-java-format-on-type-enabled nil))
+		      '(lsp-java-format-on-type-enabled nil)
+		      '(tramp-default-method "ssh"))
 
 ;; Enable fill-column-indicator-mode upon entering text and prog mode
 (add-hook 'text-mode-hook #'display-fill-column-indicator-mode)
