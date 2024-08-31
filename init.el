@@ -81,6 +81,9 @@
 (use-package magit
   :ensure t)
 
+;; Useful shortcuts for org-mode:
+;; C-c C-, to insert structure template
+;; C-c C-x C-l to preview Latex
 (use-package org
   :ensure t
   :config
