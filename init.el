@@ -107,6 +107,15 @@
    pipenv-projectile-after-switch-function
    #'pipenv-projectile-after-switch-extended))
 
+;; The poke package requires this package, but it is currently not
+;; specified in the package itself. If we try to use poke without
+;; having manually installed poke-mode, it will just not work.
+(use-package poke-mode
+  :ensure t)
+
+(use-package poke
+  :ensure t)
+
 (use-package projectile
   :ensure t
   :config
