@@ -78,6 +78,9 @@
 (use-package haskell-mode
   :ensure t)
 
+(use-package mhtml-mode
+  :config (define-key mhtml-mode-map (kbd "M-o") nil))
+
 (use-package magit
   :ensure t)
 
