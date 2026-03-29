@@ -18,7 +18,8 @@
   :hook ((c-mode c++-mode) . veeem-disable-flycheck)
   :config
   (define-key c-mode-map (kbd "C-c C-c") #'compile)
-  (define-key c++-mode-map (kbd "C-c C-c") #'compile))
+  (define-key c++-mode-map (kbd "C-c C-c") #'compile)
+  (indent-tabs-mode 0))
 
 (use-package cmake-ts-mode
   :init (add-to-list 'auto-mode-alist '("CMakeLists\\.txt\\'" . cmake-ts-mode)))
