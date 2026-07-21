@@ -70,6 +70,13 @@
   :init (global-flycheck-mode)
   :custom (flycheck-disabled-checkers (list 'coq)))
 
+(use-package f90
+  :ensure t
+  :config
+  (define-key f90-mode-map (kbd "C-c o") (lambda () (interactive) (evil-search "!$omp" t)))
+  (define-key f90-mode-map (kbd "C-c a") (lambda () (interactive) (evil-search "!$acc" t)))
+)
+
 (use-package gnus
   :ensure t
   :custom
