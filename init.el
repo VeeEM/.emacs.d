@@ -10,9 +10,9 @@
   :ensure t
   :config (global-set-key (kbd "M-o") 'ace-window))
 
-(use-package boogie-friends
-  :ensure t
-  :custom (flycheck-dafny-executable "dafny"))
+;; (use-package boogie-friends
+;;   :ensure t
+;;   :custom (flycheck-dafny-executable "dafny"))
 
 (use-package cc-mode
   :hook ((c-mode c++-mode) . veeem-disable-flycheck)
@@ -31,12 +31,12 @@
   (setq company-idle-delay 0.0)
   :config (global-company-mode t))
 
-(use-package company-coq
-  :ensure t
-  :hook coq-mode)
+;; (use-package company-coq
+;;   :ensure t
+;;   :hook coq-mode)
 
-(use-package cuda-mode
-  :ensure t)
+;; (use-package cuda-mode
+;;   :ensure t)
 
 (use-package diff-mode
   :config
@@ -129,8 +129,8 @@
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode +1))
 
-(use-package proof-general
-  :ensure t)
+;; (use-package proof-general
+;;   :ensure t)
 
 (use-package rainbow-delimiters
   :ensure t
@@ -147,18 +147,18 @@
     '(rainbow-delimiters-depth-9-face ((t (:foreground "saddle brown")))))
   :hook ((lisp-mode emacs-lisp-mode) . rainbow-delimiters-mode))
 
-(use-package slime
-  :ensure t
-  :custom
-  (sldb-initial-restart-limit 20))
+;; (use-package slime
+;;   :ensure t
+;;   :custom
+;;   (sldb-initial-restart-limit 20))
 
 (use-package which-key
   :ensure t
   :config (which-key-mode)
   :custom (which-key-idle-secondary-delay 0.1))
 
-(use-package yaml-mode
-  :ensure t)
+;; (use-package yaml-mode
+;;   :ensure t)
 
 (global-display-line-numbers-mode)
 
